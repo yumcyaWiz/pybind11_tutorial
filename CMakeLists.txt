@@ -21,6 +21,7 @@ set_target_properties(MyLib PROPERTIES CXX_STANDARD_REQUIRED ON)
 set_target_properties(MyLib PROPERTIES CXX_EXTENSIONS OFF)
 
 # src
+target_include_directories(MyLib PUBLIC src)
 target_sources(MyLib PRIVATE src/mylib.cpp)
 
 # pybind11
