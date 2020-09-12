@@ -14,8 +14,13 @@ PYBIND11_MODULE(MyLib, m) {
       .def(py::init<>())
       .def(py::init<float>())
       .def(py::init<float, float, float>())
-      .def("__repr__", [](const Vec3& v) {
-        return "(" + std::to_string(v.v[0]) + ", " + std::to_string(v.v[1]) +
-               ", " + std::to_string(v.v[2]) + ")";
-      });
+
+      .def("__repr__",
+           [](const Vec3& v) {
+             return "(" + std::to_string(v.v[0]) + ", " +
+                    std::to_string(v.v[1]) + ", " + std::to_string(v.v[2]) +
+                    ")";
+           })
+
+      .def_readonly("v", &Vec3::v);
 }

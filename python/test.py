@@ -7,4 +7,5 @@ x = 0
 MyLib.func3(x)
 print(x)
 
-print(MyLib.Vec3(1, 2, 3))
+vec = MyLib.Vec3(1, 2, 3)
+print(vec.v)
